@@ -1,1 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/deployment.xml
+.idea/inspectionProfiles/
+.idea/modules.xml
+.idea/php.xml
+.idea/php2.local.iml
+.idea/workspace.xml
+App/
