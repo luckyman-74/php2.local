@@ -11,7 +11,7 @@ class Db
         $this->dbh = new \PDO('mysql:host=localhost;dbname=php2', 'root', '');
     }
 
-    public function query(string $sql, array $params = [], string $class = \stdClass::class): array
+    public function query(string $sql, string $class, array $params = []): array
     {
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
