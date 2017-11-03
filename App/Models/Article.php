@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Model;
 
-class Article
+class Article extends Model
 {
-    public $id;
+    protected static $table = 'news';
     public $title;
     public $lead;
 }
