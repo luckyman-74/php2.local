@@ -10,9 +10,15 @@ abstract class Model
 
     public static function findAll(): array
     {
-        $db = new Db();
         $sql = 'SELECT * FROM ' . static::$table;
 
-        return $db->query($sql, static::class);
+        return (new Db())->query($sql, static::class);
+    }
+
+    public static function findById($id)
+    {
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE id = :id LIMIT 1';
+        $result = (new Db())->query($sql, static::class, [':id' => $id]);
+        return empty($result) ? false : $result[0];
     }
 }
