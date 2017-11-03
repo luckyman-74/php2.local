@@ -10,7 +10,7 @@ class Db
         $this->dbh = new \PDO('mysql:host=localhost;dbname=php2', 'root', '');
     }
 
-    public function query(string $sql, array $params = [], $class = \stdClass::class)
+    public function query(string $sql, array $params = [], string $class = \stdClass::class) :array
     {
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
