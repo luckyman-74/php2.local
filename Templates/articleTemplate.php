@@ -19,6 +19,7 @@ if (!empty($data)) { ?>
     <hr>
     <?php
 }
+
 ?>
 </body>
 </html>
