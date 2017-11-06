@@ -6,26 +6,19 @@
     <title>Новости</title>
 </head>
 <body>
-<h1>Новости</h1>
 
-<?php
-
-if (!empty($data)) {
-
-    foreach ($data as $article) {
-
-        ?>
+<?php if (!empty($data)) : ?>
+    <h1>Новости</h1>
+    <?php foreach ($data as $article) : ?>
         <a href="/article.php?id=<?php echo $article->id; ?>">
             <strong><?php echo $article->title; ?></strong>
         </a>
         <p>
             <?php echo $article->lead; ?>
         </p>
-
         <hr>
-        <?php
-    }
-}
-?>
+    <?php endforeach; ?>
+<?php endif; ?>
+
 </body>
 </html>
