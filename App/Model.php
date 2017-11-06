@@ -21,4 +21,10 @@ abstract class Model
         $result = (new Db())->query($sql, static::class, [':id' => $id]);
         return empty($result) ? false : $result[0];
     }
+
+    public static function findLatest(int $limit)
+    {
+        $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $limit;
+        return (new Db())->query($sql, static::class);
+    }
 }
