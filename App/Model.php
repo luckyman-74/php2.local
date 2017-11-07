@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 abstract class Model
 {
     protected static $table = null;
