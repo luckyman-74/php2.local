@@ -43,7 +43,5 @@ abstract class Model
         WHERE id=:id';
         (new Db())->execute($sql, $data);
 
-        echo $sql;
-        var_dump($data);
     }
 }
