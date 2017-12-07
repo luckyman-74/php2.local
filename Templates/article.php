@@ -8,6 +8,7 @@
 <h1>Новости</h1>
 
 <?php if (!empty($data)) : ?>
+
     <strong><?php echo $data->title; ?></strong>
     <p>
         <?php echo $data->lead; ?>
