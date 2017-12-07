@@ -7,9 +7,9 @@
 </head>
 <body>
 
-<?php if (!empty($data)) : ?>
+<?php if (!empty($articles)) : ?>
     <h1>Новости</h1>
-    <?php foreach ($data as $article) : ?>
+    <?php foreach ($articles as $article) : ?>
         <a href="/article.php?id=<?php echo $article->id; ?>">
             <strong><?php echo $article->title; ?></strong>
         </a>

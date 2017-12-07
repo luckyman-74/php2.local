@@ -17,12 +17,12 @@ abstract class Model
     {
         $sql = 'SELECT * FROM ' . static::$table . ' WHERE id = :id LIMIT 1';
         $result = (new Db())->query($sql, static::class, [':id' => $id]);
-        return empty($result) ? false : $result[0];
+        return $result ? $result[0] : null;
     }
 
     public static function findLatest(int $limit): array
     {
-        $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $limit ;
+        $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $limit;
         return (new Db())->query($sql, static::class);
     }
 

@@ -7,11 +7,11 @@
 <body>
 <h1>Новости</h1>
 
-<?php if (!empty($data)) : ?>
+<?php if (!empty($article)) : ?>
 
-    <strong><?php echo $data->title; ?></strong>
+    <strong><?php echo $article->title; ?></strong>
     <p>
-        <?php echo $data->lead; ?>
+        <?php echo $article->lead; ?>
     </p>
     <hr>
 <?php endif; ?>
