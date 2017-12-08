@@ -26,22 +26,51 @@ abstract class Model
         return (new Db())->query($sql, static::class);
     }
 
+    public function isNew(): bool
+    {
+        return empty($this->id);
+    }
+
     public function update(): void
     {
+        if (true === $this->isNew()) {
+            return;
+        }
         $fields = get_object_vars($this);
-        $sets = [];
-        $data = [];
+        $columns = [];
+        $values = [];
         foreach ($fields as $name => $value) {
-            $data[':' . $name] = $value;
+            $values[':' . $name] = $value;
             if ('id' === $name) {
                 continue;
             }
-            $sets[] = $name . '=:' . $name;
+            $columns[] = $name . '=:' . $name;
         }
         $sql = 'UPDATE ' . static::$table . '
-        SET ' . implode(', ', $sets) . '
+        SET ' . implode(', ', $columns) . '
         WHERE id=:id';
-        (new Db())->execute($sql, $data);
+        (new Db())->execute($sql, $values);
+    }
 
+    public function insert(): void
+    {
+        if (false === $this->isNew()) {
+            return;
+        }
+        $fields = get_object_vars($this);
+        $columns = [];
+        $values = [];
+        foreach ($fields as $name => $value) {
+            if ('id' === $name) {
+                continue;
+            }
+            $columns[] = $name;
+            $values[':' . $name] = $value;
+        }
+        $sql = 'INSERT INTO ' . static::$table . ' 
+            (' . implode(',', $columns) . ')
+            VALUES
+            (' . implode(',', array_keys($values)) . ')';
+        (new Db())->execute($sql, $values);
     }
 }
