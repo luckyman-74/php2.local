@@ -15,14 +15,16 @@ abstract class Model
 
     public static function findById(int $id)
     {
-        $sql = 'SELECT * FROM ' . static::$table . ' WHERE id = :id LIMIT 1';
+        $sql = /** @lang text */
+            'SELECT * FROM ' . static::$table . ' WHERE id = :id LIMIT 1';
         $result = (new Db())->query($sql, static::class, [':id' => $id]);
         return $result ? $result[0] : null;
     }
 
     public static function findLatest(int $limit): array
     {
-        $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $limit;
+        $sql = /** @lang text */
+            'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $limit;
         return (new Db())->query($sql, static::class);
     }
 
@@ -73,4 +75,13 @@ abstract class Model
             (' . implode(',', array_keys($values)) . ')';
         (new Db())->execute($sql, $values);
     }
+
+    public function save()
+    {
+        if ($this->isNew()) {
+            return $this->insert();
+        }
+        return $this->update();
+    }
+
 }
