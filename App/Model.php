@@ -33,11 +33,8 @@ abstract class Model
         return empty($this->id);
     }
 
-    public function update(): bool
+    protected function update(): bool
     {
-        if (true === $this->isNew()) {
-            return;
-        }
         $fields = get_object_vars($this);
         $columns = [];
         $values = [];
@@ -51,14 +48,11 @@ abstract class Model
         $sql = 'UPDATE ' . static::$table . '
         SET ' . implode(', ', $columns) . '
         WHERE id=:id';
-       return (new Db())->execute($sql, $values);
+        return (new Db())->execute($sql, $values);
     }
 
-    public function insert(): bool
+    protected function insert(): bool
     {
-        if (false === $this->isNew()) {
-            return;
-        }
         $fields = get_object_vars($this);
         $columns = [];
         $values = [];
@@ -73,7 +67,14 @@ abstract class Model
             (' . implode(',', $columns) . ')
             VALUES
             (' . implode(',', array_keys($values)) . ')';
-       return (new Db())->execute($sql, $values);
+        return (new Db())->execute($sql, $values);
+    }
+
+    public function delete(): bool
+    {
+        $sql = /** @lang text */
+            'DELETE FROM ' . static::$table . ' WHERE id=:id';
+        return (new Db())->execute($sql, [':id' => $this->id]);
     }
 
     public function save(): bool
