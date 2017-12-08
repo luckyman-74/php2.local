@@ -33,7 +33,7 @@ abstract class Model
         return empty($this->id);
     }
 
-    public function update(): void
+    public function update(): bool
     {
         if (true === $this->isNew()) {
             return;
@@ -51,10 +51,10 @@ abstract class Model
         $sql = 'UPDATE ' . static::$table . '
         SET ' . implode(', ', $columns) . '
         WHERE id=:id';
-        (new Db())->execute($sql, $values);
+       return (new Db())->execute($sql, $values);
     }
 
-    public function insert(): void
+    public function insert(): bool
     {
         if (false === $this->isNew()) {
             return;
@@ -73,10 +73,10 @@ abstract class Model
             (' . implode(',', $columns) . ')
             VALUES
             (' . implode(',', array_keys($values)) . ')';
-        (new Db())->execute($sql, $values);
+       return (new Db())->execute($sql, $values);
     }
 
-    public function save()
+    public function save(): bool
     {
         if ($this->isNew()) {
             return $this->insert();
