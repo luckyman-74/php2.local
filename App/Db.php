@@ -4,17 +4,19 @@ namespace App;
 
 class Db
 {
+    use Singleton;
+
     protected $dbh;
 
-    public function __construct()
-    {
-        $config = new Config;
-        $this->dbh = new \PDO(
-            'mysql:host=' . $config->data['db']['host'] . ';dbname=' . $config->data['db']['dbname'],
-            $config->data['db']['username'],
-            $config->data['db']['password']
-        );
-    }
+protected function __construct()
+{
+    $config = new Config;
+    $this->dbh = new \PDO(
+        'mysql:host=' . $config->data['db']['host'] . ';dbname=' . $config->data['db']['dbname'],
+        $config->data['db']['username'],
+        $config->data['db']['password']
+    );
+}
 
     public function query(string $sql, string $class, array $params = []): array
     {
