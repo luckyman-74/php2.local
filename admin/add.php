@@ -7,4 +7,4 @@ if (!empty($_POST)) {
     $article->save();
     header('location: /admin/index.php');
 }
-include __DIR__ . '/../templates/admin/add.php';
+include __DIR__ . '/../templates/admin/articleForm.php';
