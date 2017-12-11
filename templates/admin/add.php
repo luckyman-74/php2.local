@@ -1,18 +1,12 @@
+<!doctype html>
 <html lang=ru>
-<style type="text/css">
-    .title {
-        width: 800px; /* Ширина в пикселах */
-        height: 50px;
-    }
-    .lead {
-        width: 800px; /* Ширина в пикселах */
-        height: 150px;
-    }
-</style>
+
 <head>
     <meta charset="UTF-8">
     <title>Редактирование новости</title>
+    <link rel="stylesheet" href="/css/template.css" type="text/css">
 </head>
+
 <body>
 <h1>Редактирование новости</h1>
 <hr>
