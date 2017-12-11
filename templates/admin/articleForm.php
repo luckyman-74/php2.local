@@ -22,7 +22,7 @@
         <?php endif; ?>
 
         <p><label for="title"><strong>Заголовок:</strong></label></p>
-        <textarea class="title" name="title" id="title"><?php echo $article->title ?? null ?></textarea>
+        <input type="text" name="title" id="title" class="title" value="<?php echo $article->title ?? null ?>">
 
         <p><label for="lead"><strong>Текст:</strong></label></p>
         <textarea class="lead" name="lead" id="lead"><?php echo $article->lead ?? null ?></textarea>
