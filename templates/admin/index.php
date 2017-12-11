@@ -9,8 +9,7 @@
 
 <?php if (!empty($articles)) : ?>
     <h1><span style="color: #ED5565;"> Админ-панель</span></h1>
-
-
+    <a href="/admin/add.php/">Добавить новость</a>
     <hr>
     <h3>Список новостей в базе данных:</h3>
     <?php foreach ($articles as $article) : ?>
