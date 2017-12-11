@@ -2,7 +2,7 @@
 require __DIR__ . '/autoload.php';
 
 $articles = \App\Models\Article::findLatest(3);
-include __DIR__ . '/Templates/index.php';
+include __DIR__ . '/templates/index.php';
 
 /** @var \App\Models\Article $article */
 /*$article = \App\Models\Article::FindById(4);

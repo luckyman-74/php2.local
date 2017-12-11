@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Администратор
- * Date: 08.12.2017
- * Time: 20:54
- */
+require __DIR__ . '/../autoload.php';
+$articles = \App\Models\Article::findAll();
+include __DIR__.'/../templates\admin\index.php';

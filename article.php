@@ -7,4 +7,4 @@ if (!isset($_GET['id'])) {
 $articleId = (int)$_GET['id'];
 
 $article = \App\Models\Article::findById($articleId);
-include __DIR__.'/Templates/article.php';
+include __DIR__ . '/templates/article.php';
