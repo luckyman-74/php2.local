@@ -12,13 +12,11 @@
 <h1>
     <?php if (!empty($article)) : ?>
         Редактирование новости
-        <hr>
     <?php else: ?>
         Добавление новости
-        <hr>
     <?php endif; ?>
 </h1>
-
+<hr>
 <form action="/admin/<?php echo !empty($article) ? 'edit.php' : 'add.php'; ?>" method="post">
 
     <?php if (!empty($article)) : ?>
