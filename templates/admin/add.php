@@ -16,7 +16,7 @@
     <p><label for="lead"><strong>Текст:</strong></label></p>
     <textarea class="lead" name="lead" id="lead"></textarea>
     <hr>
-    <p><input type="submit" value="Сохранить"></p>
+    <p><input type="submit" value="Сохранить" class="button"></p>
 </form>
 </body>
 </html>
