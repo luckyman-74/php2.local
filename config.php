@@ -1,7 +1,4 @@
 <?php
-/**
- * Database connect parameters
- */
 return [
     'db' => [
         'host' => 'localhost',

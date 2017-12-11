@@ -10,5 +10,4 @@ class Config
     {
         $this->data = require __DIR__ . '/../config.php';
     }
-
 }
