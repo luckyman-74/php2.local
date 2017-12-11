@@ -18,7 +18,7 @@
         <?php echo $article->lead; ?>
         <hr>
         <a href="/admin/edit.php/?id=<?php echo $article->id; ?>">Редактировать</a>
-        <a href="/admin/edit.php/?id=<?php echo $article->id; ?>">Удалить</a>
+        <a href="/admin/delete.php/?id=<?php echo $article->id; ?>">Удалить</a>
         <hr>
     <?php endforeach; ?>
 <?php endif; ?>
