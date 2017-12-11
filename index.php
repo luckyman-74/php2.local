@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/autoload.php';
 
-$articles = \App\Models\Article::findLatest(3);
+$articles = \App\Models\Article::findLatest(4);
 include __DIR__ . '/templates/index.php';
 
 /** @var \App\Models\Article $article */

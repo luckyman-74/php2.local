@@ -20,15 +20,14 @@
 <hr>
 <?php if (!empty($article)) : ?>
     <form action="/admin/edit.php" method="post">
-
         <p><label for="title"><strong>Заголовок:</strong></label></p>
         <textarea class="title" name="title" id="title"><?php echo $article->title ?></textarea>
         <p><label for="lead"><strong>Текст:</strong></label></p>
         <textarea class="lead" name="lead" id="lead"><?php echo $article->lead ?></textarea>
         <input type="hidden" name="id" value="<?php echo $article->id ?>">
-        <p><input type="submit" value="Сохранить"></p>
+        <hr>
+        <input type="submit" value="Сохранить">
     </form>
-    <hr>
-<?php endif;?>
+<?php endif; ?>
 </body>
 </html>

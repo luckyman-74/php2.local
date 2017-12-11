@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '/../autoload.php';
-include __DIR__ . '/../templates/admin/add.php';
 if (!empty($_POST)) {
     $article = new \App\Models\Article();
     $article->title = $_POST['title'];
@@ -8,3 +7,4 @@ if (!empty($_POST)) {
     $article->save();
     header('location: /admin/index.php');
 }
+include __DIR__ . '/../templates/admin/add.php';

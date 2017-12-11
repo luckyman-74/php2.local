@@ -1,11 +1,9 @@
-<!doctype html>
 <html lang=ru>
 <style type="text/css">
     .title {
         width: 800px; /* Ширина в пикселах */
         height: 50px;
     }
-
     .lead {
         width: 800px; /* Ширина в пикселах */
         height: 150px;
@@ -23,8 +21,8 @@
     <textarea class="title" name="title" id="title"></textarea>
     <p><label for="lead"><strong>Текст:</strong></label></p>
     <textarea class="lead" name="lead" id="lead"></textarea>
+    <hr>
     <p><input type="submit" value="Сохранить"></p>
 </form>
-<hr>
 </body>
 </html>
