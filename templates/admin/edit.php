@@ -18,7 +18,7 @@
         <textarea class="lead" name="lead" id="lead"><?php echo $article->lead ?></textarea>
         <input type="hidden" name="id" value="<?php echo $article->id ?>">
         <hr>
-        <input type="submit" value="Сохранить">
+        <input type="submit" value="Сохранить" class="button">
     </form>
 <?php endif; ?>
 </body>
