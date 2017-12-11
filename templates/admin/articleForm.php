@@ -8,29 +8,33 @@
 </head>
 
 <body>
-<?php if (!empty($article)) : ?>
-<h1>Редактирование новости</h1>
-<hr>
-<form action="/admin/edit.php" method="post">
-    <input type="hidden" name="id" value="<?php echo $article->id  ?>">
 
-    <?php else: ?>
-
-    <h1>Добавление новости</h1>
-    <hr>
-    <form action="/admin/add.php" method="post">
-        <?php endif; ?>
-
-        <p><label for="title"><strong>Заголовок:</strong></label></p>
-        <input type="text" name="title" id="title" class="title" value="<?php echo $article->title ?? null ?>">
-
-        <p><label for="lead"><strong>Текст:</strong></label></p>
-        <textarea class="lead" name="lead" id="lead"><?php echo $article->lead ?? null ?></textarea>
-
+<h1>
+    <?php if (!empty($article)) : ?>
+        Редактирование
         <hr>
-        <input type="submit" value="Сохранить" class="button">
-        <a href="/admin/index.php" class="button">Отмена</a>
-    </form>
+    <?php else: ?>
+        Добавление
+        <hr>
+    <?php endif; ?>
+</h1>
+
+<form action="/admin/<?php echo !empty($article) ? 'edit.php' : 'add.php'; ?>" method="post">
+
+    <?php if (!empty($article)) : ?>
+        <input type="hidden" name="id" value="<?php echo $article->id ?>">
+    <?php endif; ?>
+
+    <p><label for="title"><strong>Заголовок:</strong></label></p>
+    <input type="text" name="title" id="title" class="title" value="<?php echo $article->title ?? null ?>">
+
+    <p><label for="lead"><strong>Текст:</strong></label></p>
+    <textarea class="lead" name="lead" id="lead"><?php echo $article->lead ?? null ?></textarea>
+
+    <hr>
+    <input type="submit" value="Сохранить" class="button">
+    <a href="/admin/index.php" class="button">Отмена</a>
+</form>
 
 </body>
 </html>
