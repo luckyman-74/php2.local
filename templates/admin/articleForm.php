@@ -17,7 +17,7 @@
     <?php endif; ?>
 </h1>
 <hr>
-<form action="/admin/<?php echo !empty($article) ? 'edit.php' : 'add.php'; ?>" method="post">
+<form action="/Admin/<?php echo !empty($article) ? 'edit.php' : 'add.php'; ?>" method="post">
 
     <?php if (!empty($article)) : ?>
         <input type="hidden" name="id" value="<?php echo $article->id ?>">
