@@ -31,7 +31,7 @@
 
     <hr>
     <input type="submit" value="Сохранить" class="button">
-    <a href="/admin/index.php" class="button">Отмена</a>
+    <a href="/Admin/index.php" class="button">Отмена</a>
 </form>
 
 </body>

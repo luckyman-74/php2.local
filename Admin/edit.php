@@ -10,5 +10,5 @@ if (!empty($_POST)) {
     $article->title = $_POST['title'];
     $article->lead = $_POST['lead'];
     $article->save();
-    header('location: /admin/index.php');
+    header('location: /Admin/index.php');
 }
