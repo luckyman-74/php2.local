@@ -16,7 +16,7 @@
     <h3>Список новостей в базе данных:</h3>
     <?php foreach ($articles as $article) : ?>
         <h2><span class="art_header"><?php echo $article->title; ?></span></h2>
-        <?php echo $article->lead; ?>
+        <?php echo $article->text; ?>
         <hr>
         <a href="/Admin/edit.php/?id=<?php echo $article->id; ?>" class="button" >Редактировать</a>
         <a href="/Admin/delete.php/?id=<?php echo $article->id; ?>" class="button" >Удалить</a>

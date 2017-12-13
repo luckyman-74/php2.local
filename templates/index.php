@@ -14,7 +14,7 @@
             <strong><?php echo $article->title; ?></strong>
         </a>
         <p>
-            <?php echo $article->lead; ?>
+            <?php echo $article->text; ?>
         </p>
         <hr>
     <?php endforeach; ?>

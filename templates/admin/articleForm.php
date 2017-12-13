@@ -26,8 +26,8 @@
     <p><label for="title"><strong>Заголовок:</strong></label></p>
     <input type="text" name="title" id="title" class="title" value="<?php echo $article->title ?? null ?>">
 
-    <p><label for="lead"><strong>Текст:</strong></label></p>
-    <textarea class="lead" name="lead" id="lead"><?php echo $article->lead ?? null ?></textarea>
+    <p><label for="text"><strong>Текст:</strong></label></p>
+    <textarea  name="text" id="text" class="text" ><?php echo $article->text ?? null ?></textarea>
 
     <hr>
     <input type="submit" value="Сохранить" class="button">

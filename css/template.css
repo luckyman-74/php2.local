@@ -1,11 +1,16 @@
 .title {
+    font-weight: bold;
+    font-size: 14px;
+    color: #1b28ed;
     width: 800px;
     height: 50px;
 }
-.lead {
+
+.text {
     width: 800px;
     height: 150px;
 }
+
 .panel {
     color: #ED5565;
 }

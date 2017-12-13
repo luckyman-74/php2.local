@@ -11,7 +11,7 @@
 
     <strong><?php echo $article->title; ?></strong>
     <p>
-        <?php echo $article->lead; ?>
+        <?php echo $article->text; ?>
     </p>
     <hr>
 <?php endif; ?>

@@ -3,7 +3,7 @@ require __DIR__ . '/../autoload.php';
 if (!empty($_POST)) {
     $article = new \App\Models\Article();
     $article->title = $_POST['title'];
-    $article->lead = $_POST['lead'];
+    $article->text = $_POST['text'];
     $article->save();
     header('location: /Admin/index.php');
     exit;
