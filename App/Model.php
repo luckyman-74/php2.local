@@ -57,6 +57,7 @@ abstract class Model
         $columns = [];
         $values = [];
         foreach ($fields as $name => $value) {
+
             if ('id' === $name) {
                 continue;
             }
