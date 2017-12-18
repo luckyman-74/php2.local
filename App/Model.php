@@ -67,7 +67,12 @@ abstract class Model
             (' . implode(',', $columns) . ')
             VALUES
             (' . implode(',', array_keys($values)) . ')';
-        return (new Db())->execute($sql, $values);
+
+        $db = new Db();
+        if (true === $result = $db->execute($sql, $values)) {
+            $this->id = $db->lastInsertId();
+        }
+        return $result;
     }
 
     public function delete(): bool

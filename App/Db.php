@@ -27,4 +27,9 @@ public function __construct()
     {
         return $this->dbh->prepare($query)->execute($params);
     }
+
+    public function lastInsertId(): int
+    {
+        return $this->dbh->lastInsertId();
+    }
 }

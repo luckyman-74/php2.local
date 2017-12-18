@@ -17,7 +17,7 @@
     <?php endif; ?>
 </h1>
 <hr>
-<form action="/Admin/<?php echo !empty($article) ? 'edit.php' : 'add.php'; ?>" method="post">
+<form action="/App/Admin/<?php echo !empty($article) ? 'edit.php' : 'add.php'; ?>" method="post">
 
     <?php if (!empty($article)) : ?>
         <input type="hidden" name="id" value="<?php echo $article->id ?>">
@@ -31,7 +31,7 @@
 
     <hr>
     <input type="submit" value="Сохранить" class="button">
-    <a href="/Admin/index.php" class="button">Отмена</a>
+    <a href="/App/Admin/index.php" class="button">Отмена</a>
 </form>
 
 </body>
