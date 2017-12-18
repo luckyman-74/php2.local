@@ -3,23 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Редактирование новости</title>
+    <title>Редактирование/добавление новости</title>
     <link rel="stylesheet" href="/css/template.css" type="text/css">
 </head>
 
 <body>
 
 <h1>
-    <?php if (!empty($article)) : ?>
+    <?php if (!empty($article->id)) : ?>
         Редактирование новости
     <?php else: ?>
         Добавление новости
     <?php endif; ?>
 </h1>
 <hr>
-<form action="/App/Admin/<?php echo !empty($article) ? 'edit.php' : 'add.php'; ?>" method="post">
+<form action="/App/Admin/save.php" method="post">
 
-    <?php if (!empty($article)) : ?>
+    <?php if (!empty($article->id)) : ?>
         <input type="hidden" name="id" value="<?php echo $article->id ?>">
     <?php endif; ?>
 

@@ -11,14 +11,14 @@
 
 <?php if (!empty($articles)) : ?>
     <h1><span class="panel"> Админ-панель</span></h1>
-    <a href="/App/Admin/add.php/" class="button">Добавить новость</a>
+    <a href="/App/Admin/save.php/" class="button">Добавить новость</a>
 
     <h3>Список новостей в базе данных:</h3>
     <?php foreach ($articles as $article) : ?>
         <h2><span class="art_header"><?php echo $article->title; ?></span></h2>
         <?php echo $article->text; ?>
         <hr>
-        <a href="/App/Admin/edit.php/?id=<?php echo $article->id; ?>" class="button" >Редактировать</a>
+        <a href="/App/Admin/save.php/?id=<?php echo $article->id; ?>" class="button" >Редактировать</a>
         <a href="/App/Admin/delete.php/?id=<?php echo $article->id; ?>" class="button" >Удалить</a>
         <hr>
     <?php endforeach; ?>
