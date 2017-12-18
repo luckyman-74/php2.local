@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Traits;
 
 trait Singleton
 {
@@ -10,7 +10,7 @@ trait Singleton
     {
     }
 
-    public static function instance()
+    public static function getInstance()
     {
         if (null === static::$instance){
             static::$instance= new static;

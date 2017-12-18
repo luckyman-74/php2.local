@@ -4,13 +4,11 @@ namespace App;
 
 class Db
 {
-    use Singleton;
-
     protected $dbh;
 
-protected function __construct()
+public function __construct()
 {
-    $config = new Config;
+    $config = Config::getInstance();
     $this->dbh = new \PDO(
         'mysql:host=' . $config->data['db']['host'] . ';dbname=' . $config->data['db']['dbname'],
         $config->data['db']['username'],

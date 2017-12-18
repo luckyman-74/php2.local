@@ -10,14 +10,14 @@ abstract class Model
     public static function findAll(): array
     {
         $sql = 'SELECT * FROM ' . static::$table;
-        return Db::instance()->query($sql, static::class);
+        return (new Db())->query($sql, static::class);
     }
 
     public static function findById(int $id)
     {
         $sql = /** @lang text */
             'SELECT * FROM ' . static::$table . ' WHERE id = :id LIMIT 1';
-        $result = Db::instance()->query($sql, static::class, [':id' => $id]);
+        $result = (new Db())->query($sql, static::class, [':id' => $id]);
         return $result ? $result[0] : null;
     }
 
@@ -25,7 +25,7 @@ abstract class Model
     {
         $sql = /** @lang text */
             'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $limit;
-        return Db::instance()->query($sql, static::class);
+        return (new Db())->query($sql, static::class);
     }
 
     public function isNew(): bool
@@ -48,7 +48,7 @@ abstract class Model
         $sql = 'UPDATE ' . static::$table . '
         SET ' . implode(', ', $columns) . '
         WHERE id=:id';
-        return Db::instance()->execute($sql, $values);
+        return (new Db())->execute($sql, $values);
     }
 
     protected function insert(): bool
@@ -67,14 +67,14 @@ abstract class Model
             (' . implode(',', $columns) . ')
             VALUES
             (' . implode(',', array_keys($values)) . ')';
-        return Db::instance()->execute($sql, $values);
+        return (new Db())->execute($sql, $values);
     }
 
     public function delete(): bool
     {
         $sql = /** @lang text */
             'DELETE FROM ' . static::$table . ' WHERE id=:id';
-        return Db::instance()->execute($sql, [':id' => $this->id]);
+        return (new Db())->execute($sql, [':id' => $this->id]);
     }
 
     public function save(): bool
