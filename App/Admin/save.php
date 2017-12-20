@@ -12,4 +12,3 @@ $article->title = $_POST['title'];
 $article->text = $_POST['text'];
 $article->save();
 header('location: /App/Admin/index.php');
-exit;
