@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Редактирование/добавление новости</title>
+    <title>
+        <?php echo !empty($article->id) ? 'Редактирование новости' : 'Добавление новости' ?>
+    </title>
     <link rel="stylesheet" href="/css/template.css" type="text/css">
 </head>
 
