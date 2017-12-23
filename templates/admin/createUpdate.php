@@ -12,7 +12,7 @@
 <form action="/App/Admin/save.php" method="post">
 
     <h1>
-        <?php if (!empty($article->id)) : ?>
+        <?php if (!empty($article)) : ?>
             Редактирование новости
             <input type="hidden" name="id" value="<?php echo $article->id ?>">
         <?php else: ?>
