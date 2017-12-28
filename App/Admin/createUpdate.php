@@ -9,6 +9,6 @@ if (!empty($_GET['id'])) {
     $view->article = new \App\Models\Article();
 }
 
-$authors->all = \App\Models\Author::findAll();
+$authors = \App\Models\Author::findAll();
 
 $view->display(__DIR__ . '/../../templates/admin/createUpdate.php');
