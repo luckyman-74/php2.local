@@ -11,11 +11,14 @@
     <h1>Новости</h1>
     <?php foreach ($news as $article) : ?>
         <a href="/article.php?id=<?php echo $article->id; ?>">
-            <strong><?php echo $article->title; ?></strong>
+            <h2><span class="art_header"><?php echo $article->title; ?></span></h2>
         </a>
         <p>
             <?php echo $article->text; ?>
         </p>
+        <em>Автор:
+            <?php echo (null === $article->author_id) ? 'Неизвестный автор' : $article->author->name; ?>
+        </em>
         <hr>
     <?php endforeach; ?>
 <?php endif; ?>

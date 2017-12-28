@@ -17,9 +17,12 @@
     <?php foreach ($news as $article) : ?>
         <h2><span class="art_header"><?php echo $article->title; ?></span></h2>
         <?php echo $article->text; ?>
+        <p>
+            <em>Автор:<?php echo (null === $article->author_id) ? 'Неизвестный автор' : $article->author->name; ?></em>
+        </p>
         <hr>
-        <a href="/App/Admin/createUpdate.php/?id=<?php echo $article->id; ?>" class="button" >Редактировать</a>
-        <a href="/App/Admin/delete.php/?id=<?php echo $article->id; ?>" class="button" >Удалить</a>
+        <a href="/App/Admin/createUpdate.php/?id=<?php echo $article->id; ?>" class="button">Редактировать</a>
+        <a href="/App/Admin/delete.php/?id=<?php echo $article->id; ?>" class="button">Удалить</a>
         <hr>
     <?php endforeach; ?>
 <?php endif; ?>
