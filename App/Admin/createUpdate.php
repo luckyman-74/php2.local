@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/../../autoload.php';
 $view = new \App\View();
+$authors = new \App\Models\Author();
 
 if (!empty($_GET['id'])) {
     $view->article = \App\Models\Article::findById($_GET['id']);
@@ -9,4 +10,5 @@ if (!empty($_GET['id'])) {
 }
 
 $authors->all = \App\Models\Author::findAll();
+
 $view->display(__DIR__ . '/../../templates/admin/createUpdate.php');
