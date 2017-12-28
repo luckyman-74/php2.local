@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title><?php echo !empty($article) ? 'Редактирование новости' : 'Добавление новости' ?></title>
+    <title><?php echo !empty($article->id) ? 'Редактирование новости' : 'Добавление новости' ?></title>
     <link rel="stylesheet" href="/css/template.css" type="text/css">
 </head>
 
@@ -12,7 +12,7 @@
 <form action="/App/Admin/save.php" method="post">
 
     <h1>
-        <?php if (!empty($article)) : ?>
+        <?php if (!empty($article->id)) : ?>
             Редактирование новости
             <input type="hidden" name="id" value="<?php echo $article->id ?>">
         <?php else: ?>
@@ -21,9 +21,9 @@
     </h1>
 
     <p><label for="title"><strong>Заголовок:</strong></label></p>
-    <input type="text" name="title" id="title" class="title" required value="<?php echo $article->title ?? null ?>">
+    <input type="text" name="title" id="title" class="title" required value="<?php echo $article->title; ?>">
     <p><label for="text"><strong>Текст:</strong></label></p>
-    <textarea name="text" id="text" class="text" required><?php echo $article->text ?? null ?></textarea>
+    <textarea name="text" id="text" class="text" required><?php echo $article->text; ?></textarea>
     <hr>
     <input type="submit" value="Сохранить" class="button">
     <a href="/App/Admin/index.php" class="button">Отмена</a>
