@@ -9,12 +9,12 @@
 
 <body>
 
-<?php if (!empty($articles)) : ?>
+<?php if (!empty($news)) : ?>
     <h1><span class="panel"> Админ-панель</span></h1>
     <a href="/App/Admin/createUpdate.php/" class="button">Добавить новость</a>
 
     <h3>Список новостей в базе данных:</h3>
-    <?php foreach ($articles as $article) : ?>
+    <?php foreach ($news as $article) : ?>
         <h2><span class="art_header"><?php echo $article->title; ?></span></h2>
         <?php echo $article->text; ?>
         <hr>

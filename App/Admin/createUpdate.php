@@ -1,9 +1,10 @@
 <?php
 require __DIR__ . '/../../autoload.php';
+$view = new \App\View();
 
 if (!empty($_GET['id'])) {
-    $article = \App\Models\Article::findById($_GET['id']);
+    $view->article = \App\Models\Article::findById($_GET['id']);
 } else {
-    $article = new \App\Models\Article();
+    $view->article = new \App\Models\Article();
 }
-include __DIR__ . '/../../templates/admin/createUpdate.php';
+$view->display(__DIR__ . '/../../templates/admin/createUpdate.php');

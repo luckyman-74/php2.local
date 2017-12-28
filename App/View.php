@@ -2,8 +2,15 @@
 
 namespace App;
 
+use App\Models\Article;
 use App\Traits\GetSetTrait;
 
+/**
+ * Class View
+ * @package App
+ * @property Article[] $news
+ * @property Article $article
+ */
 class View
 {
     use GetSetTrait;

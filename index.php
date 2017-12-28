@@ -1,4 +1,7 @@
 <?php
+
 require __DIR__ . '/autoload.php';
-$articles = \App\Models\Article::findLatest(3);
-include __DIR__ . '/templates/index.php';
+
+$view = new \App\View();
+$view->news = \App\Models\Article::findLatest(4);
+$view->display(__DIR__ . '/templates/index.php');

@@ -4,7 +4,6 @@ if (!isset($_GET['id'])) {
     die;
 }
 
-$articleId = (int)$_GET['id'];
-
-$article = \App\Models\Article::findById($articleId);
-include __DIR__ . '/templates/article.php';
+$view = new \App\View();
+$view->article = \App\Models\Article::findById((int)$_GET['id']);
+$view->display(__DIR__ . '/templates/article.php');
