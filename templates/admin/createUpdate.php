@@ -26,7 +26,7 @@
     <textarea name="text" id="text" class="text" required><?php echo $article->text; ?></textarea>
    <p><label for="author"><strong>Автор:</strong></label></p>
     <select name="author" id="author"  required>
-        <option value="0">Не выбрано</option>
+        <option value="0">Автор не выбран</option>
         <?php foreach ($authors as $author) : ?>
             <option value="<?php echo $author->id; ?>"
                 <?php if ($article->author_id === $author->id) : ?>
