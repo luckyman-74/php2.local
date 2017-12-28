@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title><?php echo !empty($article) ? 'Редактирование новости' : 'Добавление новости' ?></title>
+    <title><?php echo  $article->isNew() ? 'Добавление новости' : 'Редактирование новости' ?></title>
     <link rel="stylesheet" href="/css/template.css" type="text/css">
 </head>
 
@@ -12,11 +12,11 @@
 <form action="/App/Admin/save.php" method="post">
 
     <h1>
-        <?php if (!empty($article)) : ?>
+        <?php if ($article->isNew()) : ?>
+            Добавление новости
+        <?php else: ?>
             Редактирование новости
             <input type="hidden" name="id" value="<?php echo $article->id ?>">
-        <?php else: ?>
-            Добавление новости
         <?php endif; ?>
     </h1>
 
