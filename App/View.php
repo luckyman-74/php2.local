@@ -3,16 +3,22 @@
 namespace App;
 
 use App\Traits\GetSetTrait;
+use App\Traits\IteratorTrait;
 
-
+/**
+ * Class View
+ * @package App
+ */
 class View
     implements \Countable, \Iterator
 {
     use GetSetTrait;
+    use IteratorTrait
 
-    private $position = 0;
-    private $myData = array(1, 2, 3);
-
+    /**
+     * @param string $template
+     * @return string
+     */
     public function render(string $template): string
     {
         ob_start();
@@ -23,39 +29,18 @@ class View
         return ob_get_clean();
     }
 
+    /**
+     * @param string $template
+     */
     public function display(string $template): void
     {
         echo $this->render($template);
     }
-
+    /**
+     * @return int
+     */
     public function count()
     {
         return count($this->data);
-    }
-
-
-    public function rewind()
-    {
-        $this->position = 0;
-    }
-
-    public function current()
-    {
-        return $this->myData[$this->position];
-    }
-
-    public function key()
-    {
-        return $this->position;
-    }
-
-    public function next()
-    {
-        ++$this->position;
-    }
-
-    public function valid()
-    {
-        return isset($this->myData[$this->position]);
     }
 }
