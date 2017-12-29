@@ -3,7 +3,6 @@
 namespace App;
 trait IteratorTrait
 {
-
     /**
      * Установить внутренний указатель массива на его первый элемент
      */
@@ -12,6 +11,10 @@ trait IteratorTrait
         reset($this->data);
     }
 
+    /**
+     * Возвратить ключ на который указывает внутренний указатель
+     * @return int|null|string
+     */
     public function key()
     {
         return key($this->data);
@@ -35,6 +38,7 @@ trait IteratorTrait
     }
 
     /**
+     * Проверить не вышел ли внутренний указатель за пределы массива
      * @return bool
      */
     public function valid()
